@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from langchain_community.document_loaders import WebBaseLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -9,8 +10,14 @@ from langchain_openai import OpenAIEmbeddings
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import create_retrieval_chain
+from dotenv import load_dotenv
+load_dotenv()
 
-api= GEMINI_API
+GEMINI_API = os.getenv('GEMINI_API')
+MONGODB_URL = os.getenv('MONGODB_URL')
+OPENAI_API = os.getenv('OPENAI_API')
+
+api = GEMINI_API
 
 def get_stored_vectorstore():
     uri= MONGODB_URL
