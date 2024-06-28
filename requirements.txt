@@ -1,0 +1,7 @@
+fastapi
+langchain-community
+langchain-google-genai
+pymongo
+langchain
+langchain-core
+langchain-openai
