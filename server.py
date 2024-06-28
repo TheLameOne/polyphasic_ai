@@ -36,7 +36,7 @@ def get_stored_vectorstore():
 
 app=FastAPI()
 
-@app.get("/")
+@app.get("/{question}")
 def root(question):
     vector=get_stored_vectorstore()
     genai.configure(api_key=api)
